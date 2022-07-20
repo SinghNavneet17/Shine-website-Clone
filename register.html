@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        #signup{
+            width: 80%;
+            display: flex;
+            margin: auto;
+            margin-top: 55px;
+            justify-content: center;
+            margin-bottom: 40px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #sright{
+            
+            width: 50%;
+            padding: 10px;
+            margin: auto;
+        }
+        #sleft{
+            margin: auto;
+        }
+        #sright>h1,#sright>p,h3{
+            text-align: center;
+            margin-top: -5px;
+        }
+         form {
+            padding: 20px;
+            width: 70%;
+            margin-top: 30px;
+            margin: auto;
+        }
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 3px solid #ccc;
+            box-sizing: border-box;
+            margin-top: -4px;
+            margin-bottom: 16px;
+            font-size: 16px;
+            border-radius: 8px;
+            resize: vertical;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 3px solid #ccc;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            font-size: 16px;
+            border-radius: 8px;
+            resize: vertical;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 3px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-top: 6px;
+            border-radius: 8px;
+
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            background-color: #8652ff;
+            border: 3px solid #ccc;
+            box-sizing: border-box;
+            margin-top: 6px;
+            outline: none;
+            margin-bottom: 16px;
+            font-size: 25px;
+            border-radius: 8px;
+            color: white;
+        }
+        #others img {
+            margin-top: 3px;
+            width: 30px;
+            height: 30px;
+        }
+
+        #leftbox>h1 {
+            margin-left: 90px;
+            font-family: sans-serif;
+        }
+
+        #others {
+            width: 40%;
+            display: flex;
+            margin: auto;
+            margin-top: -20px;
+            margin-bottom: 10px;
+        }
+
+        #others>div {
+            display: flex;
+            width: 15%;
+            margin: auto;
+            margin-top: 10px;
+            margin-left: 10px;
+            justify-content: center;
+            font-size: 18px;
+            padding: 8px 8px;
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+
+        #others>div>p {
+            margin-left: 10px;
+        }
+        #par{
+            margin-top: -10px;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div id="signup">
+        <div id="sleft">
+            <img src="https://scontent.fknu3-1.fna.fbcdn.net/v/t1.6435-9/54257568_10156362327893668_6689340297127657472_n.png?stp=dst-png_p320x320&_nc_cat=102&ccb=1-7&_nc_sid=8024bb&_nc_ohc=PeTSYVDqvbMAX8d7rRK&_nc_ht=scontent.fknu3-1.fna&oh=00_AT9YanCAEe9DHliBlasAhBxBR9332KQrZXSh3zB6IkWNeA&oe=62FF71EA"
+                alt="">
+
+        </div>
+        <hr>
+        <div id="sright">
+            <h1>Let’s get started, tell us about yourself.</h1>
+            <p>It only takes a couple of minutes to get started</p>
+            <form>
+                <input placeholder="Name" id="sname" type="text" />
+
+                <input type="email" id="semail" placeholder="Email" />
+                <input placeholder="Mobile Number" id="Mono" type="text" />
+                <p id="par" >Your details will be visible only to genuine recruiters</p>
+                <input placeholder="Password" id="spassword" type="password" />
+                <p>By registering, you agree to our <a href="https://www.shine.com/termsandconditions/"> terms &
+                        conditions</a><span>&</span><a href="https://www.shine.com/privacypolicy/">privacy policy</a>
+                </p>
+                <input type="submit" value="Continue" />
+                <h3>--------or Register with-----------</h3>
+            </form>
+            <div id="others">
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="">
+                   
+                </div>
+                <div>
+                    <img src="https://icons-for-free.com/download-icon-linkedin+logo+service+social+web+website+icon-1320192780023588708_0.svg"
+                        alt="">
+                   
+                </div>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/2048px-Facebook_icon_2013.svg.png"
+                        alt="">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./nav_log_reg.js"></script>
+</html>
