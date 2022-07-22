@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bar {
+
+            width: 100%;
+            height: 60px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        #bar>img {
+            margin-left: 100px;
+            height: 59px;
+        }
+
+        #bigger {
+
+            width: 90%;
+            display: flex;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        #cart {
+
+            width: 60%;
+            height: 100%;
+        }
+
+        #extra {
+            font-family: sans-serif;
+            width: 40%;
+            padding: 10px;
+        }
+
+        #coupon {
+            padding: 6px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        }
+
+        #coupon>button {
+            font-size: 16px;
+            padding: 9px 20px;
+            font-weight: bold;
+            background-color: #8652ff;
+            color: white;
+            border-radius: 6px;
+            border: none;
+        }
+
+        #summary {
+            padding: 20px;
+            line-height: 2px;
+            margin-top: 15px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        #ptb {
+            margin-top: 15px;
+            display: flex;
+            justify-content: end;
+        }
+
+        #ptb>button {
+            font-weight: bold;
+            font-size: 18px;
+            padding: 10px 25px;
+            margin-right: 5px;
+            background-color: #8652ff;
+            color: white;
+            border-radius: 6px;
+            border: none;
+        }
+
+        .dv {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 70%;
+            padding: 6px;
+            border: 3px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        /* ******************************************************cart add*********************************************************************** */
+        #bbox {
+            font-family: sans-serif;
+            display: flex;
+            width: 92%;
+            line-height: 13px;
+            padding: 10px 15px;
+            align-items: center;
+            margin-top: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        #bb1 {
+            width: 70px;
+            height: 70px;
+        }
+
+        #bb3 {
+            margin-left: 100px;
+        }
+
+        #bb3>img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        #bb2 {
+            width: 75%;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        #bb2 h2:nth-child(2) {
+            color: #38404c;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bar">
+        <img src="	https://learning.shine.com/_next/image?url=%2Fimages%2Fshine-logo.png&w=96&q=75" alt="">
+    </div>
+    <h3 style="margin-left:100px;font-family:sans-serif;margin-top:40px">Hi Navneet!</h3>
+    <p style="margin-left:100px;font-family:sans-serif;color: gray;margin-top:-10px;">Please check your cart</p>
+    <div id="bigger">
+        <div id="cart">
+            <!-- for add to cart items -->
+        </div>
+        <div id="extra">
+            <div id="coupon">
+                <h3>Apply Coupon</h3>
+                <input type="text" placeholder="Coupon Code">
+                <button>Apply</button>
+                <h4></h4>
+            </div>
+            <div id="summary">
+                <div class="dv">
+                    <h2>Order Summary</h2>
+                </div>
+                <div class="dv" id="dv1">
+                    <p>Subtotal</p>
+                    <h4>25,998</h4>
+                </div>
+                <div class="dv" id="dv2">
+                    <p>SGST @ 9%</p>
+                    <p></p>
+                </div>
+                <div class="dv" id="dv3">
+                    <p>CGST @ 9%</p>
+                    <p>25,998</p>
+                </div>
+               
+                <div class="dv" id="dv4">
+                    <p>Coupon Discount</p>
+                    <p></p>
+                </div>
+                <hr>
+                <div class="dv" id="dv5">
+                    <h4>Total Payable</h4>
+                    <h4></h4>
+                </div>
+            </div>
+            <div id="ptb">
+                <button>Proceed to Buy</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+    // ******************************coupon*********************************************************************************
+    let ttotal=0;
+    let minus=0;
+    document.querySelector("#coupon>button").addEventListener("click", function () {
+        console.log(ttotal);
+        if (document.querySelector("#coupon>input").value == "Masai30") {
+             let diff=minus*0.1 ;
+             ttotal=ttotal-diff;
+            let x = document.querySelector("#coupon>h4")
+            x.innerText = "Coupon Applied Successfully!"
+            x.style.color = "green";
+            document.querySelector("#dv4>p+p").innerText = "- ₹" + diff.toFixed(2);
+            document.querySelector("#dv5>h4+h4").innerText = "₹" + ttotal.toFixed(2);
+
+        } else {
+            if (document.querySelector("#coupon>input").value !== "") {
+                let y = document.querySelector("#coupon>h4")
+                y.innerText = "Invalid Coupon!"
+                y.style.color = "red";
+            } else {
+                document.querySelector("#coupon>h4").innerText = ""
+            }
+        }
+    });
+
+    //********************************************************Display***********************************************************   
+    let cartData = JSON.parse(localStorage.getItem("addToCart")) || [];
+    display(cartData);
+    function display(data) {
+        document.querySelector("#cart").innerHTML = "";
+        data.forEach(function (elem, index) {
+            let bbox = document.createElement("div");
+            bbox.setAttribute("id", "bbox");
+            let bb1 = document.createElement("img");
+            bb1.setAttribute("id", "bb1");
+            bb1.setAttribute("src", elem.image);
+
+            let bb2 = document.createElement("div");
+            bb2.setAttribute("id", "bb2");
+            let hed1 = document.createElement("h2");
+            hed1.innerText = elem.name;
+            let hed2 = document.createElement("h2");
+            hed2.innerText = "₹ " + elem.price;
+
+            let bb3 = document.createElement("div");
+            bb3.setAttribute("id", "bb3");
+            let bbi = document.createElement("img");
+            bbi.setAttribute("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNxLk76xEyOroXk71DnyfTO8suSB2G05tMog&usqp=CAU");
+            bb3.addEventListener("click", function () {
+                itemremove(index);
+            })
+            bb3.append(bbi);
+            bb2.append(hed1, hed2);
+            bbox.append(bb1, bb2, bb3);
+            document.querySelector("#cart").append(bbox);
+        });
+        //  ********************************************************Discount*********************************************************************   
+        let sum = 0;
+
+        cartData.forEach(function (elem, index) {
+            sum += elem.price;
+        });
+        let num4 = sum * 0.09;
+        let total = sum + 2 * num4;
+        document.querySelector("#dv1>h4").innerText = "₹" + sum;
+        document.querySelector("#dv2>p+p").innerText = "+ ₹" + num4.toFixed(2);
+        document.querySelector("#dv3>p+p").innerText = "+ ₹" + num4.toFixed(2);
+        document.querySelector("#dv4>p+p").innerText = "- ₹" + 0;
+        document.querySelector("#dv5>h4+h4").innerText = "₹" + total.toFixed(2);
+        ttotal=total;
+        minus=sum;
+        // *****************************************************************************************************************************************
+    }
+    function itemremove(index) {
+        cartData.splice(index, 1);
+        localStorage.setItem("addToCart", JSON.stringify(cartData));
+        display(cartData);
+    }
+ 
+
+</script>
