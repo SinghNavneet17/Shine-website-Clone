@@ -110,9 +110,13 @@
 </body>
 <script>
    document.querySelector("#upr").addEventListener("click",loginfunc);
-
+   document.querySelector("#upl").addEventListener("click",cartsfunc);
+   function cartsfunc(){
+    window.location.href="cart.html";
+}
 function loginfunc(){
     window.location.href="login.html";
 }
+
 </script>
 </html>
