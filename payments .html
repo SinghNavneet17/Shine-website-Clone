@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ultra{
+            
+            border: 1px solid white;
+           font-size: 18px;
+        }
+        #choice{
+            border: 2px solid #8652ff;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            line-height: 2px;
+            padding: 30px;
+            font-family: sans-serif;
+            width: 40%;
+            margin: auto;
+            border-radius: 10px;
+        }
+        #print{
+            background-color:#8652ff;
+            border: 2px solid #8652ff;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            margin: auto;
+            width: 40%;
+            border-radius: 10px;
+            padding: 30px;
+            line-height: 15px;
+            font-family: sans-serif;
+        }
+        input[type="text"],select,
+        textarea {
+            width: 100%;
+            padding: 6px;
+            border: 3px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+            resize: vertical;
+        }
+        button{
+            background-color:#8652ff;
+            width: 100%;
+            padding: 6px;
+            border: 3px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+            resize: vertical;
+        }
+        .title{
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ultra">
+        <div id="pay">
+            <div id="print">
+                <h2>Payable Amount :</h2>
+                <h1>3</h1>
+            </div>
+            <div id="choice">
+
+                <h3>PREFERRED PAYMENT</h3>
+                <form>
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Google Pay">
+                    <label for="vehicle1">Google Pay </label><br>
+                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Phone Pe">
+                    <label for="vehicle2"> Phone Pe</label><br>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Paytm">
+                    <label for="vehicle3"> Paytm</label><br><br>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="NetBanking">
+                    <label for="vehicle3"> NetBanking</label><br><br>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Wallet">
+                    <label for="vehicle3"> Wallet</label><br><br>
+                </form>
+                <h3>CARD PAYMENT</h3>
+                <form class="credit-card">
+                    <div class="form-header">
+                      <h4 class="title">Credit card detail</h4>
+                    </div>
+              
+                    <div class="form-body">
+                      <!-- Card Number -->
+                      <input type="text" id="card-number" placeholder="Card Number">
+              
+                      <!-- Date Field -->
+                      <div class="date-field">
+                        <div class="month">
+                          <select name="Month" id="month">
+                            <option value="january">January</option>
+                            <option value="february">February</option>
+                            <option value="march">March</option>
+                            <option value="april">April</option>
+                            <option value="may">May</option>
+                            <option value="june">June</option>
+                            <option value="july">July</option>
+                            <option value="august">August</option>
+                            <option value="september">September</option>
+                            <option value="october">October</option>
+                            <option value="november">November</option>
+                            <option value="december">December</option>
+                          </select>
+                        </div>
+                        <div class="year">
+                          <select name="Year" id="year">
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                          </select>
+                        </div>
+                      </div>
+              
+                      <!-- Card Verification Field -->
+                      <div class="card-verification">
+                        <div class="cvv-input">
+                          <input type="text" placeholder="CVV" id="cvv">
+                        </div>
+                        <div class="cvv-details">
+                          <p style="color:#14a2b8">3 or 4 digits usually found on the signature strip </p><br>
+                        </div>
+                      </div>
+              
+                      <!-- Buttons -->
+                      <button type="click" class="proceed-btn">PAY</button>
+                      
+                    </div>
+                  </form>
+            </div>
+        </div>
+        <div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    let cardData=[
+        {
+            crdNo:"7619123723991939",
+            crdMonth:"November",
+            crdYear:"2024",
+            crdcvv:"123"
+        },
+        {
+            crdNo:"9453991939123723",
+            crdMonth:"September",
+            crdYear:"2023",
+            crdcvv:"321"
+        }
+    ];
+    let count=0; 
+    document.querySelector(".proceed-btn").addEventListener("click",cardCheck);
+    function cardCheck(){
+        event.preventDefault();
+        function displaycard(Data){
+            Data.forEach(function(elem){
+                 let x=document.querySelector("#card-number").value;
+                 let y= document.querySelector("#year").value;
+                 let z=document.querySelector("#cvv").value;
+                 let w=document.querySelector("#month").value;
+                   console.log(typeof(x),typeof(y),typeof(y),w);
+                if(x===elem.crdNo  && y===elem.crdYear && z===elem.crdcvv){
+                    count++;
+                    window.location.href="success.html";
+                    }
+                    
+               
+            });
+            if(count==0){
+                alert("Card details wrong");
+            }
+            
+        }
+        }
+    
+</script>
