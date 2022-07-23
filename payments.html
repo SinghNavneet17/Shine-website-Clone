@@ -164,10 +164,13 @@
             crdcvv:"321"
         }
     ];
+    
     let count=0; 
     document.querySelector(".proceed-btn").addEventListener("click",cardCheck);
     function cardCheck(){
+    
         event.preventDefault();
+        displaycard(cardData);
         function displaycard(Data){
             Data.forEach(function(elem){
                  let x=document.querySelector("#card-number").value;
