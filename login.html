@@ -142,7 +142,7 @@
                         <p id="ran">Forgot Password</p>
                     </div>
 
-                    <input type="submit" value="Login" onclick="closePopup()" />
+                    <input type="submit" value="Login"  id="log"/>
                 </form>
             </div>
             <hr>
@@ -175,5 +175,39 @@
 document.querySelector("#reg").addEventListener("click",regfunc);
     function regfunc(){
         window.location.href="register.html";
-    }</script>
+    }
+    let credentials=JSON.parse(localStorage.getItem("studentinfo"));
+        //  console.log(credentials);
+         document.querySelector("form").addEventListener("submit",searchinfo);
+         function searchinfo(){
+            event.preventDefault();
+            let object={
+                stu_mail:document.querySelector("#email").value,
+                stu_pass:document.querySelector("#pass").value
+            }
+            let flag=false;
+            credentials.forEach(function(elem){
+                // console.log(object.stu_mail==elem.email);
+                if(object.stu_mail == elem.email && object.stu_pass == elem.password){
+                    flag=true
+                } 
+               
+            });
+            if(flag==true){
+                document.querySelector("#log").addEventListener("click",logfunc);
+                 function logfunc(){
+                      
+                window.location.href="index.html";
+                alert("sucessfull logged in");
+                }
+                
+            }
+            else{
+                alert("enter valid credentials");
+            }
+           
+          
+         } 
+    
+</script>
 </html>
