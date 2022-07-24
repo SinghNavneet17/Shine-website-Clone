@@ -141,12 +141,12 @@
             <h1>Let’s get started, tell us about yourself.</h1>
             <p>It only takes a couple of minutes to get started</p>
             <form>
-                <input placeholder="Name" id="sname" type="text" />
+                <input placeholder="Name" id="name" type="text" />
 
-                <input type="email" id="semail" placeholder="Email" />
+                <input type="email" id="email" placeholder="Email" />
                 <input placeholder="Mobile Number" id="Mono" type="text" />
                 <p id="par" >Your details will be visible only to genuine recruiters</p>
-                <input placeholder="Password" id="spassword" type="password" />
+                <input placeholder="Password" id="pass" type="password" />
                 <p>By registering, you agree to our <a href="https://www.shine.com/termsandconditions/"> terms &
                         conditions</a><span>&</span><a href="https://www.shine.com/privacypolicy/">privacy policy</a>
                 </p>
@@ -172,5 +172,27 @@
         </div>
     </div>
 </body>
-<script src="./nav_log_reg.js"></script>
+<script>
+     document.querySelector("form").addEventListener("submit",storedata);
+    let taskArr=JSON.parse(localStorage.getItem("studentinfo"))||[];
+    
+    function storedata(){
+        event.preventDefault();
+        let obj={
+            name:document.querySelector("#name").value,
+            email:document.querySelector("#email").value,
+            Mobileno:document.querySelector("#Mono").value,
+            password:document.querySelector("#pass").value,
+        }
+        if(obj.name=="" || obj.email=="" || obj.password=="" || obj.Mobileno=="" ){
+            alert("Please enter all the details")
+        }
+        else{
+            taskArr.push(obj);
+        localStorage.setItem("studentinfo",JSON.stringify(taskArr));
+        window.location.href="login.html";
+        }
+        
+    }
+</script>
 </html>
